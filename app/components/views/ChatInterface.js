@@ -26,6 +26,8 @@ export default Marionette.View.extend({
 
     channel.reply('loadRoom', (roomId) => {
       const room = this.roomsCollection.get(roomId);
+      // Reload the messages. Because why not?
+      room.getMessages();
       const username = this.userModel.get('name');
       this.showChildView('roomDescription', new RoomDescriptionView({
         model: room,
