@@ -22,7 +22,9 @@ export default Marionette.View.extend({
 
   onFormSubmit(e) {
     e.preventDefault();
-    const message = this.ui.messageInput.val();
+    const input = this.ui.messageInput;
+    const message = input.val();
     channel.request('sendMessage', this.model.id, this.username, message);
+    input.val('');
   }
 });
