@@ -63,7 +63,7 @@ export default Marionette.View.extend({
   onRender() {
     this.showChildView('userInfo', this.userInfoView);
     // Re-render every minute to reflect the latest uptime
-    setInterval(() => this.userInfoView.render(), 1000 * 1);
+    setInterval(() => this.userInfoView.render(), 1000 * 60);
 
     this.showChildView('roomList', this.roomListView);
   }
