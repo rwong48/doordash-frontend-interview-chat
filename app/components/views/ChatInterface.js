@@ -26,9 +26,10 @@ export default Marionette.View.extend({
 
     channel.reply('loadRoom', (roomId) => {
       const room = this.roomsCollection.get(roomId);
+      const username = this.userModel.get('name');
       this.showChildView('roomDescription', new RoomDescriptionView({
         model: room,
-        username: this.userModel.get('name')
+        username: username
       }));
       this.showChildView('messageList', new MessagesView({
         collection: room.get('messages')
@@ -36,8 +37,13 @@ export default Marionette.View.extend({
       // ... If the user is allowed to send messages to this room...
       // (For now, always allow)
       this.showChildView('messageCompose', new MessageComposeView({
-        model: room
+        model: room,
+        username: username
       }));
+    });
+
+    channel.reply('sendMessage', (roomId, username, message) => {
+      this.roomsCollection.get(roomId).sendMessage(username, message);
     });
   },
 
