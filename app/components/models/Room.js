@@ -27,13 +27,13 @@ export default Backbone.Model.extend({
 
   getMessages() {
     // Does the local collection keep an ordering?
-    this.get('messages').fetch();
+    return this.get('messages').fetch();
   },
 
   sendMessage(name, message) {
     // Adds a message to the local collection and submits a network request
     // to create the message. Does the local collection keep an ordering?
-    this.get('messages').create({
+    return this.get('messages').create({
       name: name,
       message: message
     });

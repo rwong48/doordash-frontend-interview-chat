@@ -42,8 +42,12 @@ export default Marionette.View.extend({
       }));
     });
 
+    channel.reply('refreshMessages', (roomId) => {
+      return this.roomsCollection.get(roomId).getMessages();
+    });
+
     channel.reply('sendMessage', (roomId, username, message) => {
-      this.roomsCollection.get(roomId).sendMessage(username, message);
+      return this.roomsCollection.get(roomId).sendMessage(username, message);
     });
   },
 
