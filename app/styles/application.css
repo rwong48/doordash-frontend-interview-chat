@@ -33,3 +33,14 @@ body {
   background-color: red;
   border: 0;
 }
+
+#sidebar {
+  width: 300px;
+  float: left;
+  background-color: red;
+  color: white;
+}
+
+#chat-area {
+  float: left;
+}
