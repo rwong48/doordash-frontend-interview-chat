@@ -32,7 +32,8 @@ export default Marionette.View.extend({
         username: username
       }));
       this.showChildView('messageList', new MessagesView({
-        collection: room.get('messages')
+        collection: room.get('messages'),
+        username: username
       }));
       // ... If the user is allowed to send messages to this room...
       // (For now, always allow)

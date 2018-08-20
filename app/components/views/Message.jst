@@ -1,4 +1,4 @@
-<div class="sender-name">
+<div class="sender-name<% if (messageBelongsToCurrentUser) { %> current-user<% } %>">
   <%- name %>
 </div>
 <div class="content">
