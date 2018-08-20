@@ -30,7 +30,7 @@ body {
 
 .login-button {
   color: white;
-  background-color: red;
+  background-color: #f71845;
   border: 0;
 }
 
@@ -38,8 +38,33 @@ body {
   float: left;
   width: 300px;
   flex: 0 0 300px;
-  background-color: red;
+  background-color: #f71845;
   color: white;
+  padding: 30px 0 30px 0;
+  height: 100vh;
+}
+
+#user-info {
+  margin-bottom: 40px;
+  padding: 0 30px;
+}
+
+.room-link {
+  padding: 20px 30px;
+  display: block;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+}
+
+.room-link.active {
+  background-color: #7b0815;
+}
+
+.username {
+  font-size: 22px;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
 #chat-area {
@@ -48,5 +73,5 @@ body {
 }
 
 .current-user {
-  color: red;
+  color: #f71845;
 }

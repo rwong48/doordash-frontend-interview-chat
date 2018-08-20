@@ -30,5 +30,6 @@ I could spend all the time in the world on this, but I can't. Here are some thin
 * Automated testing for these two cases (slow response and error response). Maybe even malformed responses.
 * Test/support slow message-sending
 * Fetch rooms that a user has access to. Since there are no restrictions waiting on user input, at load time, all rooms, room details, and messages are fetched from the server.
+* Consolidate colors into variables
 * Add reactions ;)
 * WebSockets to receive new messages immediately (advanced)
