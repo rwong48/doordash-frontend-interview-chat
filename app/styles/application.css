@@ -3,23 +3,33 @@
   font-family: -apple-system, system, sans-serif;
 }
 
-#content {
-  width: 480px;
-  margin: 0 auto;
+body {
+  margin: 0;
 }
 
-h1 {
-  margin-bottom: 0.5em;
-  font-size: 5em;
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-a {
-  color: #006a86;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0);
+.login-input, .login-button {
+  display: block;
+  width: 355px;
+  height: 40px;
 }
 
-a:hover {
-  color: #006a86;
-  border-bottom: 1px solid #006a86;
+.login-input {
+  line-height: 3em;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  border: 1px solid gray;
+  padding: 2px 20px;
+}
+
+.login-button {
+  color: white;
+  background-color: red;
+  border: 0;
 }
