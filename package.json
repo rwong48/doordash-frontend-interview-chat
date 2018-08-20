@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "The Frontend take home project for DoorDash",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/rickylwong/doordash-frontend-interview-project"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --open",
