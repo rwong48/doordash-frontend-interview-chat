@@ -1,3 +1,4 @@
+import Backbone from 'backbone';
 import Marionette from 'backbone.marionette';
 import Radio from 'backbone.radio';
 import User from './models/User';
@@ -5,7 +6,7 @@ import LoginView from './views/Login';
 import ChatInterfaceView from './views/ChatInterface';
 import Rooms from './collections/Rooms';
 
-const loginChannel = Radio.channel('login');
+const channel = Radio.channel('chatApp');
 
 export default Marionette.Application.extend({
   region: '#app',
@@ -20,7 +21,7 @@ export default Marionette.Application.extend({
     window.roomsCollection = roomsCollection;
     const roomsJqXhr = roomsCollection.fetch();
 
-    loginChannel.reply('login', (username) => {
+    channel.reply('login', (username) => {
       const userModel = new User({
         name: username,
         created: new Date().getTime()
@@ -34,7 +35,6 @@ export default Marionette.Application.extend({
         // TODO: Do something
       })
       .done((data, textStatus, jqXhr) => {
-
         this.showView(new ChatInterfaceView({
           user: userModel,
           rooms: roomsCollection

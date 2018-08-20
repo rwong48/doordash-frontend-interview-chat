@@ -7,7 +7,7 @@ body {
   margin: 0;
 }
 
-#app {
+#login {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,12 +35,18 @@ body {
 }
 
 #sidebar {
-  width: 300px;
   float: left;
+  width: 300px;
+  flex: 0 0 300px;
   background-color: red;
   color: white;
 }
 
 #chat-area {
   float: left;
+  min-width: 300px;
+}
+
+.current-user {
+  color: red;
 }

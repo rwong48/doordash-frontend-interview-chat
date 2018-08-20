@@ -1,6 +1,6 @@
 import Marionette from 'backbone.marionette';
-import RoomLinkView from './RoomLink';
+import MessageView from './Message';
 
 export default Marionette.CollectionView.extend({
-  childView: RoomLinkView
+  childView: MessageView
 });
