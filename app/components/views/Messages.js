@@ -9,7 +9,6 @@ export default Marionette.CollectionView.extend({
   },
 
   childViewOptions(model) {
-    console.log(model, model.get('name'), this.username);
     return {
       messageBelongsToCurrentUser: model.get('name') === this.username
     };

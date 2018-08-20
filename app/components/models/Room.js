@@ -15,7 +15,10 @@ export default Backbone.Model.extend({
 
     messagesJqXhr
     .fail((jqXhr, textStatus, errorThrown) => {
-      // TODO: Do something
+      // TODO: Do something useful
+      if (confirm('Sorry, there was an error loading messages. Please reload the page and try again.')) {
+        window.location.reload();
+      }
     })
     .done((data, textStatus, jqXhr) => {
       // Don't actually need to do anything
