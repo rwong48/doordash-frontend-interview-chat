@@ -8,7 +8,7 @@ export default Marionette.View.extend({
     const now = new Date().getTime();
     const created = this.created;
     const uptimeSeconds = (now - created) / 1000;
-    return Math.round(uptimeSeconds) / 60;
+    return Math.round(uptimeSeconds / 60);
   },
 
   serializeData() {

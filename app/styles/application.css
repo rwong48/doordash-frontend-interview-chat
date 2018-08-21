@@ -20,23 +20,28 @@ body {
   height: 40px;
 }
 
-.login-input {
+.login-input, .message-input {
   line-height: 3em;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   border-radius: 3px;
   border: 1px solid gray;
   padding: 2px 20px;
 }
 
 .login-button {
+  margin-top: 20px;
   color: white;
   background-color: #f71845;
   border: 0;
 }
 
+.chat-interface {
+  display: flex;
+}
+
 #sidebar {
   float: left;
-  width: 300px;
+  /* width: 300px; */
   flex: 0 0 300px;
   background-color: #f71845;
   color: white;
@@ -68,10 +73,110 @@ body {
 }
 
 #chat-area {
+  flex-grow: 1;
+  height: 100vh;
   float: left;
-  min-width: 300px;
 }
 
-.current-user {
+#room-description, #message-compose {
+  width: calc(100% - 300px); /* TODO: fix me */
+  min-width: 350px;
+}
+
+#room-description {
+  height: 130px;
+  padding: 30px;
+  text-align: center;
+  color: #696969;
+  position: fixed;
+  border-bottom: 1px solid #696969;
+}
+
+#room-description .room-name {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.room-participants .current-user {
   color: #f71845;
+}
+
+#messages {
+  margin-top: 130px;
+  background-color: #eff0f2;
+  height: calc(100vh - 130px - 110px);
+  border-bottom: 1px solid #696969;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.current-user .sender-name {
+  display: none;
+}
+
+.sender-name {
+  color: #696969;
+  margin-top: 20px;
+}
+
+.message {
+  width: 100%;
+  max-width: 100%; /* Sneaky long messages */
+  float: left;
+  margin-top: 10px;
+  /* Increase space between messages, so that users can easily associate names with messages. */
+  margin-bottom: 25px;
+}
+
+.message .current-user .content {
+  float: right;
+}
+
+.message .content {
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px 25px;
+
+  /* We could consolidate this into a class or something, and use mixins */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.message .current-user .content {
+  background-color: #f71845;
+  color: white;
+}
+
+#message-compose {
+  position: fixed;
+  bottom: 0;
+  padding: 20px;
+  line-height: 30px;
+}
+
+.message-input {
+  float: left;
+  width: 87%; /* TODO: this is ugly, fix me */
+}
+
+.message-send-button {
+  float: left;
+  width: 10%;
+  color: #5d89e1;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: white;
+  border: 0;
+  padding: 10px 20px;
+}
+.message-send-button:hover {
+  cursor: pointer;
 }

@@ -11,6 +11,7 @@ const channel = Radio.channel('chatApp');
 
 export default Marionette.View.extend({
   template: ChatInterfaceTemplate,
+  className: 'chat-interface',
 
   initialize(options) {
     this.userModel = options.user;

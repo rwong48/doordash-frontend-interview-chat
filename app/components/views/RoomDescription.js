@@ -10,7 +10,8 @@ export default Marionette.View.extend({
 
   serializeData() {
     return _.extend({}, this.model.attributes, {
-      username: this.username
+      username: this.username,
+      usersExcludingCurrent: _.reject(this.model.get('users'), (name) => name === this.username)
     });
   }
 });
